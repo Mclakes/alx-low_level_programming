@@ -2,7 +2,8 @@
 #include <stdlib.h>
 
 /**
- * main - print hex opcodes of main up to n bytes passed in as an argument
+ * main - print hex opcodes of main up to
+ * a number bytes passed in as an argument
  *
  * @ac: number of arguments
  * @av: array of argument strings
@@ -26,9 +27,10 @@ int main(int ac, char *av[])
 		return (2);
 	}
 	if (n > 0)
-		printf("%x", *f++);
+		printf("%02x", *f++);
 	for (i = 1; i < n; i++)
-		printf(" %x", *f++);
-	printf("\n");
+		printf(" %02x", *f++);
+	if (n > 0)
+		printf("\n");
 	return (0);
 }
