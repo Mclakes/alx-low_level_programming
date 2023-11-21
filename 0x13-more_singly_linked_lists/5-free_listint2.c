@@ -7,17 +7,19 @@
  * that frees a listint_t list.
  * @head: pointer to a linked list
  *
+ * Return: void
  */
 
 void free_listint2(listint_t **head)
 {
-	if (head == NULL)
+	listint_t *next;
+
+	if (head == NULL || *head == NULL)
 		return;
-	while (*head != NULL)
+
+	for (next = (*head)->next; *head != NULL; *head = next)
 	{
+		next = (*head)->next;
 		free(*head);
-		*head = (*head)->next;
 	}
-	free(*head);
-	head = NULL;
 }
