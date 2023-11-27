@@ -43,7 +43,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	/* To write */
 	_writing = write(STDOUT_FILENO, pt_buffer, _reading);
-	if (_writing == -1)
+	if (_writing == -1 || _writing != _reading )
 	{
 		free(pt_buffer);
 		close(file_distributor);
