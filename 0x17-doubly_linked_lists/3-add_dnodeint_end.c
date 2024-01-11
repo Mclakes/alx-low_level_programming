@@ -1,14 +1,16 @@
 #include "lists.h"
 
 /**
- * add_dnodeint_end - adds a new node at the end of a dlistint_t list.
+ * add_dnodeint_end - adds a new node at the end of a dlistint_t.
+ *
  * @head: pointer to the first element of the list.
  * @n: int to set in the new node.
  * Return: address of the new element, or NULL if it failed
  **/
+
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
-	dlistint_t *new, *aux = *head;
+	dlistint_t *new, *auxi = *head;
 
 	new = malloc(sizeof(dlistint_t));
 	if (new == NULL)
@@ -16,12 +18,12 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 	new->n = n;
 	new->next = NULL;
 
-	if (aux)
+	if (auxi)
 	{
-		while (aux->next)
-			aux = aux->next;
-		new->prev = aux;
-		aux->next = new;
+		while (auxi->next)
+			auxi = auxi->next;
+		new->prev = auxi;
+		auxi->next = new;
 	}
 	else
 	{
