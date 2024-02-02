@@ -2,6 +2,7 @@
 
 /**
  * hash_table_delete - function that deletes a hash table.
+ *
  * @ht: is the hash table
  *
  */

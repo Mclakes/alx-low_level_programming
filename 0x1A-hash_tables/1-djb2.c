@@ -2,6 +2,7 @@
 
 /**
  * hash_djb2 - hash function implementing the djb2 algorithm.
+ *
  * @str: pointer to string with data
  *
  * Return: hash
